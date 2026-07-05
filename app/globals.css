@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050914;
+  --fg: #e8eeff;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #59a8ff, #ff7a29 60%, #ffd166);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shine {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+}
