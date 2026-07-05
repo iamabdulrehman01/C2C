@@ -1,14 +1,14 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import Features from "@/components/Features";
-import Journey from "@/components/Journey";
-import Programs from "@/components/Programs";
-import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/organisms/Navbar";
+import Hero from "@/components/organisms/Hero";
+import Marquee from "@/components/organisms/Marquee";
+import Features from "@/components/organisms/Features";
+import Journey from "@/components/organisms/Journey";
+import Programs from "@/components/organisms/Programs";
+import Stats from "@/components/organisms/Stats";
+import Testimonials from "@/components/organisms/Testimonials";
+import FAQ from "@/components/organisms/FAQ";
+import CTA from "@/components/organisms/CTA";
+import Footer from "@/components/organisms/Footer";
 
 export default function Page() {
   return (

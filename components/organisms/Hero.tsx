@@ -1,6 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, GraduationCap, Briefcase, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  GraduationCap,
+  Briefcase,
+  Users,
+} from "lucide-react";
+import Button from "../atoms/Button";
+import Badge from "../atoms/Badge";
+import FloatCard from "../molecules/FloatCard";
 
 export default function Hero() {
   return (
@@ -12,10 +21,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-white/80"
+          className="inline-flex justify-center"
         >
-          <Sparkles className="w-3.5 h-3.5 text-accent-500" />
-          Building brighter futures for 10,000+ students
+          <Badge variant="glass">
+            <Sparkles className="w-3.5 h-3.5 text-accent-500" />
+            Building brighter futures for 300+ students
+          </Badge>
         </motion.div>
 
         <motion.h1
@@ -46,13 +57,17 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8 flex flex-wrap justify-center gap-3"
         >
-          <a href="#register" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 font-semibold text-white shadow-glow hover:opacity-95">
+          <Button
+            href="#register"
+            variant="gradient"
+            className="group px-6 py-3 shadow-glow hover:opacity-95"
+          >
             Create Student Account
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-          </a>
-          <a href="#login" className="rounded-xl glass px-6 py-3 font-semibold text-white hover:bg-white/10">
+          </Button>
+          <Button href="#login" variant="glass" className="px-6 py-3">
             Student Login
-          </a>
+          </Button>
         </motion.div>
 
         {/* Floating cards */}
@@ -64,29 +79,28 @@ export default function Hero() {
             className="glass rounded-3xl p-6 md:p-10"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <FloatCard icon={<GraduationCap />} title="Campus" text="Registration, guidance & training." />
-              <FloatCard icon={<Users />} title="Mentorship" text="1:1 mentors & career mapping." delay={0.6} />
-              <FloatCard icon={<Briefcase />} title="Corporate" text="Interview prep & placements." delay={0.8} />
+              <FloatCard
+                icon={<GraduationCap />}
+                title="Campus"
+                text="Registration, guidance & training."
+              />
+              <FloatCard
+                icon={<Users />}
+                title="Mentorship"
+                text="1:1 mentors & career mapping."
+                delay={0.6}
+              />
+              <FloatCard
+                icon={<Briefcase />}
+                title="Corporate"
+                text="Interview prep & placements."
+                delay={0.8}
+              />
             </div>
           </motion.div>
           <div className="absolute -z-10 inset-0 blur-3xl opacity-40 bg-gradient-to-r from-brand-500 via-accent-500 to-brand-500" />
         </div>
       </div>
     </section>
-  );
-}
-
-function FloatCard({ icon, title, text, delay = 0.4 }: { icon: React.ReactNode; title: string; text: string; delay?: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      className="rounded-2xl bg-white/5 border border-white/10 p-6 text-left hover:-translate-y-1 hover:bg-white/10 transition"
-    >
-      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 grid place-items-center text-white">{icon}</div>
-      <h3 className="mt-4 font-semibold text-white">{title}</h3>
-      <p className="text-sm text-white/70 mt-1">{text}</p>
-    </motion.div>
   );
 }

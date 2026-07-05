@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Logo from "../atoms/Logo";
+import Button from "../atoms/Button";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -22,20 +24,21 @@ export default function Navbar() {
     >
       <div className="mx-auto mt-4 max-w-6xl px-4">
         <div className="glass rounded-2xl px-4 py-3 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 font-bold">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 grid place-items-center text-white">C2</div>
-            <span className="text-white">Campus<span className="text-brand-400">2</span>Corporate</span>
-          </a>
+          <Logo />
           <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-white transition">{l.label}</a>
+              <a key={l.href} href={l.href} className="hover:text-white transition">
+                {l.label}
+              </a>
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <a href="#login" className="text-sm text-white/80 hover:text-white">Login</a>
-            <a href="#register" className="text-sm rounded-xl px-4 py-2 bg-white text-brand-950 font-semibold hover:bg-brand-100 transition">
+            <Button href="#login" variant="link">
+              Login
+            </Button>
+            <Button href="#register" variant="white" className="text-sm px-4 py-2">
               Get Started
-            </a>
+            </Button>
           </div>
           <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
             {open ? <X /> : <Menu />}
@@ -44,9 +47,18 @@ export default function Navbar() {
         {open && (
           <div className="md:hidden glass rounded-2xl mt-2 p-4 flex flex-col gap-3">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="text-white/80" onClick={() => setOpen(false)}>{l.label}</a>
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-white/80"
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </a>
             ))}
-            <a href="#register" className="rounded-xl px-4 py-2 bg-white text-brand-950 font-semibold text-center">Get Started</a>
+            <Button href="#register" variant="white" className="w-full py-2">
+              Get Started
+            </Button>
           </div>
         )}
       </div>

@@ -1,4 +1,15 @@
-const logos = ["Infosys","TCS","Wipro","Accenture","Cognizant","Capgemini","HCL","Deloitte","IBM","Tech Mahindra"];
+const logos = [
+  "Infosys",
+  "TCS",
+  "Wipro",
+  "Accenture",
+  "Cognizant",
+  "Capgemini",
+  "HCL",
+  "Deloitte",
+  "IBM",
+  "Tech Mahindra",
+];
 
 export default function Marquee() {
   return (
