@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Button from "../atoms/Button";
 
 export default function CTA() {
   return (
@@ -21,13 +22,13 @@ export default function CTA() {
             Join thousands of students who transformed their careers with Campus to Corporate.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#" className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-brand-950 hover:bg-brand-50">
+            <Button href="#" variant="white" className="group px-6 py-3">
               Create student account
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </a>
-            <a href="#login" className="rounded-xl px-6 py-3 font-semibold text-white border border-white/30 hover:bg-white/10">
+            </Button>
+            <Button href="#login" variant="outline" className="px-6 py-3">
               Student login
-            </a>
+            </Button>
           </div>
         </motion.div>
       </div>
