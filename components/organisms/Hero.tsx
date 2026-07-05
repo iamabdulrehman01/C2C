@@ -25,7 +25,7 @@ export default function Hero() {
         >
           <Badge variant="glass">
             <Sparkles className="w-3.5 h-3.5 text-accent-500" />
-            Building brighter futures for 10,000+ students
+            Building brighter futures for 300+ students
           </Badge>
         </motion.div>
 
