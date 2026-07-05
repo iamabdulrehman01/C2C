@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* this is test */
 
 :root {
   --bg: #050914;
