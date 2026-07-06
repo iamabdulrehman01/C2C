@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -14,12 +13,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <motion.header
-      initial={{ y: -40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 inset-x-0 z-50"
-    >
+    <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto mt-4 max-w-6xl px-4">
         <div className="glass rounded-2xl px-4 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 font-bold">
@@ -50,6 +44,6 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </motion.header>
+    </header>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import { Target, BookOpen, MessageSquare, Award, Rocket, ShieldCheck } from "lucide-react";
 
 const items = [
@@ -22,21 +20,17 @@ export default function Features() {
           </h2>
         </div>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((it, i) => (
-            <motion.div
+          {items.map((it) => (
+            <div
               key={it.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative rounded-2xl glass p-6 hover:border-brand-500/40 hover:-translate-y-1 transition"
+              className="group relative rounded-2xl glass p-6 hover:border-brand-500/40 hover:-translate-y-1 transition duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500/20 to-accent-500/20 border border-white/10 grid place-items-center text-brand-400 group-hover:text-white">
                 <it.icon className="w-5 h-5" />
               </div>
               <h3 className="mt-5 font-semibold text-white text-lg">{it.title}</h3>
               <p className="text-sm text-white/60 mt-2 leading-relaxed">{it.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

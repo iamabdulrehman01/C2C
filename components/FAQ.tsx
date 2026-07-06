@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   { q: "Who is Campus to Corporate for?", a: "Any college student — from 1st year to final year — who wants structured training, mentorship, and placement guidance." },
@@ -32,19 +31,11 @@ export default function FAQ() {
                   <span className="text-white font-medium">{f.q}</span>
                   <ChevronDown className={`w-5 h-5 text-white/70 transition ${isOpen ? "rotate-180" : ""}`} />
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="px-5 pb-5 text-white/70 text-sm"
-                    >
-                      {f.a}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {isOpen && (
+                  <div className="px-5 pb-5 text-white/70 text-sm">
+                    {f.a}
+                  </div>
+                )}
               </div>
             );
           })}

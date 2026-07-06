@@ -1,6 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
-
 const steps = [
   { n: "01", t: "Register", d: "Create your student account and share your goals." },
   { n: "02", t: "Assess", d: "Take diagnostic tests to identify strengths & gaps." },
@@ -24,12 +21,8 @@ export default function Journey() {
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-500/50 to-transparent hidden md:block" />
           <div className="space-y-10">
             {steps.map((s, i) => (
-              <motion.div
+              <div
                 key={s.n}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
                 className={`md:w-1/2 ${i % 2 === 0 ? "md:pr-10" : "md:ml-auto md:pl-10"}`}
               >
                 <div className="glass rounded-2xl p-6 relative">
@@ -37,7 +30,7 @@ export default function Journey() {
                   <h3 className="mt-2 text-xl font-semibold text-white">{s.t}</h3>
                   <p className="text-white/60 mt-1 text-sm">{s.d}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

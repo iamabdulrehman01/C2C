@@ -1,18 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function CTA() {
   return (
     <section id="register" className="py-24">
       <div className="mx-auto max-w-5xl px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl p-10 md:p-16 text-center bg-gradient-to-br from-brand-600 via-brand-700 to-brand-950 shadow-glow"
-        >
+        <div className="relative overflow-hidden rounded-3xl p-10 md:p-16 text-center bg-gradient-to-br from-brand-600 via-brand-700 to-brand-950 shadow-glow">
           <div className="absolute inset-0 opacity-30 grid-bg pointer-events-none" />
           <h2 className="text-4xl md:text-5xl font-extrabold text-white">
             Your first offer letter <br /> starts today.
@@ -29,7 +21,7 @@ export default function CTA() {
               Student login
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

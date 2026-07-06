@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const items = [
@@ -21,13 +19,9 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {items.map((t, i) => (
-            <motion.div
+          {items.map((t) => (
+            <div
               key={t.n}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
               className="glass rounded-3xl p-8 relative"
             >
               <Quote className="absolute top-6 right-6 w-8 h-8 text-brand-500/30" />
@@ -41,7 +35,7 @@ export default function Testimonials() {
                   <p className="text-white/50 text-xs">{t.r}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

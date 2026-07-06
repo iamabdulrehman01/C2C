@@ -1,5 +1,3 @@
-"use client";
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const programs = [
@@ -36,13 +34,9 @@ export default function Programs() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {programs.map((p, i) => (
-            <motion.div
+          {programs.map((p) => (
+            <div
               key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`relative rounded-3xl p-8 ${
                 p.highlight
                   ? "bg-gradient-to-b from-brand-500/20 to-accent-500/10 border border-brand-500/40 shadow-glow"
@@ -75,7 +69,7 @@ export default function Programs() {
               >
                 Enroll now
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
